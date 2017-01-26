@@ -31,7 +31,7 @@ paths:
         required: true  
   "/hello":
     get:
-      description: "A simple hello world API"
+      description: "A simple hello world message"
       operationId: "hello"
       produces:
       - "application/json"
