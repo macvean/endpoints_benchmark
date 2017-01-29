@@ -1,0 +1,60 @@
+swagger: "2.0"
+info:
+  description: "My first Endpoints API"
+  title: "Hello API"
+  version: "1.0.0"
+host: "hello-api.endpoints.YOUR-PROJECT-ID.cloud.goog"
+basePath: "/"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+schemes:
+- "https"
+security:
+- api_key: []
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
+paths:
+  "/reverse/{input_string}":
+    get:
+      description: "Reverse the input string."
+      operationId: "reverse"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Reverse"
+          schema:
+            type: string
+      parameters:
+      - description: "String to reverse"
+        in: path
+        name: input_string
+        type: string
+        required: true  
+  "/hello":
+    get:
+      description: "A simple hello world message"
+      operationId: "hello"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Hello"
+          schema:
+            type: string
+  "/goodbye":
+    get:
+      description: "A simple goodbye message"
+      operationId: "goodbye"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "Goodbye"
+          schema:
+            type: string 
